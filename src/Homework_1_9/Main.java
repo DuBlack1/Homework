@@ -8,7 +8,7 @@ public class Main {
         Book TheTaleOfTheGoldenCockerel = new Book("The Tale of the Golden Cockerel", 2004, Pushkin);
         Book MalachiteBox = new Book("Malachite Box", 2021, Bazhov);
 
-        System.out.println("Название книги: " + TheTaleOfTheFishermanAndTheFish.getName() + ". Дата публикации: " + TheTaleOfTheFishermanAndTheFish.getPublicationYear() + " Автор: " + TheTaleOfTheFishermanAndTheFish.getAuthor());
+        System.out.println(TheTaleOfTheFishermanAndTheFish);
 
         TheTaleOfTheFishermanAndTheFish.setPublicationYear(2021);
         System.out.println("Дата изменена на " + TheTaleOfTheFishermanAndTheFish.getPublicationYear());
