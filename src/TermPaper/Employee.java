@@ -1,5 +1,7 @@
 package TermPaper;
-//нужно добавить проверку на ошибку ввода отдела,
+
+import java.util.Objects;
+
 public class Employee {
     private final String firstname;
     private final String middleName;
@@ -21,6 +23,7 @@ public class Employee {
         count++;
         return count;
     }
+
     public String getFirstname() {
         return firstname;
     }
@@ -38,7 +41,6 @@ public class Employee {
     }
 
     public void setDepartment(int department) {
-
         this.department = department;
     }
 
@@ -62,5 +64,16 @@ public class Employee {
                 ". ID:" + id;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return department == employee.department && Double.compare(employee.salary, salary) == 0 && id == employee.id && Objects.equals(firstname, employee.firstname) && Objects.equals(middleName, employee.middleName) && Objects.equals(lastName, employee.lastName);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstname, middleName, lastName, department, salary, id);
+    }
 }
